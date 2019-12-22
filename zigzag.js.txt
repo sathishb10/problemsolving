@@ -1,0 +1,35 @@
+
+function zigzag(n,s){
+var emptyArray=createEmptyArray(n,s.length)
+ //console.log(emptyArray);
+var format=printFormat(n) // 0121
+for(let i=0;i<s.length;i++){
+    let pid=format[i%format.length]
+    //  console.log(pid);//012100121001210
+ emptyArray[pid][i]=s[i];
+}
+return emptyArray;
+}
+function createEmptyArray(k,kl){
+      let arr=[]
+    for(let i=0;i<k;i++){
+           let innerarray=[];
+        for(let j=0;j<kl;j++){
+            innerarray.push(" ")
+        }
+        arr.push(innerarray);
+    }
+   return arr;}
+function printFormat(n){
+    var id=[]
+    for(let i=0;i<n;i++){
+        id.push(i)
+    }   for(let j=0;j<n-2;j++){
+            id.push(id[n-j-2])
+        }    return id;
+    }
+zigzag(3, "sathish burra")
+
+[ [ 's', ' ', ' ', ' ', 'i', ' ', ' ', ' ', 'b', ' ', ' ', ' ', 'a' ],
+  [ ' ', 'a', ' ', 'h', ' ', 's', ' ', ' ', ' ', 'u', ' ', 'r', ' ' ],
+  [ ' ', ' ', 't', ' ', ' ', ' ', 'h', ' ', ' ', ' ', 'r', ' ', ' ' ] ]
