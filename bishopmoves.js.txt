@@ -1,0 +1,98 @@
+var arr=[]
+function matrix(n,x,y){
+ 
+    for(var i=0;i<n;i++){
+        var str=[];
+        for(var j=0;j<n;j++){
+             if(i==x&&j==y){
+                 str.push("B")
+             }
+             else{
+                 str.push("0")
+             }
+        }
+        arr.push(str);
+    }
+}
+
+function leftupperdiagonal(n,x,y){
+var str=[]
+    i=x-1;
+    j=y-1;
+    while(i>=0 && j>=0){
+        arr[i][j]="."
+        str.push([i,j])
+     i -=1
+     j-=1
+    }
+    return str;
+
+}
+
+function rightupperdiagonal(n,x,y){
+    var str=[];
+    i=x-1;
+    j=y+1;
+    while(i>=0 && j<n){
+        arr[i][j]="."
+        str.push([i,j])
+        i -=1;
+        j+=1;
+    }
+    return str;
+}
+
+function leftlowerdiagonal(n,x,y){
+    var str=[];
+    i=x+1;
+    j=y-1;
+    while(i<n && j>=0){
+        arr[i][j]="."
+        str.push([i,j])
+        i +=1;
+        j -=1;
+    }
+    return str;    
+}
+
+
+function rightlowerdiagonal(n,x,y){
+    var str=[];
+    i=x+1;
+    j=y+1;
+    while(i<n && j<n){
+        arr[i][j]="."
+        str.push([i,j])
+        i +=1;
+        j +=1;
+    }
+    return str;    
+}
+
+
+
+
+function bishopmoves(n,x,y){
+console.log(matrix(n,x,y));
+console.log(leftupperdiagonal(n,x,y))
+console.log(rightupperdiagonal(n,x,y))
+console.log(leftlowerdiagonal(n,x,y))
+console.log(rightlowerdiagonal(n,x,y))
+console.log(arr)
+
+}
+bishopmoves(8,4,4)
+
+
+[ [ 3, 3 ], [ 2, 2 ], [ 1, 1 ], [ 0, 0 ] ]
+[ [ 3, 5 ], [ 2, 6 ], [ 1, 7 ] ]
+[ [ 5, 3 ], [ 6, 2 ], [ 7, 1 ] ]
+[ [ 5, 5 ], [ 6, 6 ], [ 7, 7 ] ]
+[ [ '.', '0', '0', '0', '0', '0', '0', '0' ],
+  [ '0', '.', '0', '0', '0', '0', '0', '.' ],
+  [ '0', '0', '.', '0', '0', '0', '.', '0' ],
+  [ '0', '0', '0', '.', '0', '.', '0', '0' ],
+  [ '0', '0', '0', '0', 'B', '0', '0', '0' ],
+  [ '0', '0', '0', '*', '0', '.', '0', '0' ],
+  [ '0', '0', '*', '0', '0', '0', '.', '0' ],
+  [ '0', '*', '0', '0', '0', '0', '0', '.' ] ]
