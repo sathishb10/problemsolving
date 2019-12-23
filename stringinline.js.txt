@@ -1,0 +1,58 @@
+function  strings(n){
+        var data=n.split(' ')
+  let kk=createarray(n)
+ var maxlen =Math.max(...(kk.map(el => el.length)));
+        var arr=[]
+ for(var i=0;i<data.length;i++){ 
+     for(var j=0;j<data[i].length;j++){
+        kk[i][j]=data[i][j]      
+     }
+ }
+        var arrC = []
+ for (i = 0; i < maxlen; i++) {   // this is the loop "down"
+         arrC[i] = [];
+        for (j = 0; j < kk.length; ++j){ // and this is the          
+      arrC[i].push((kk[j][i]) || " ");                 
+    }
+}
+ return arrC 
+
+//   var arrC = []
+//  for (i = 0; i < maxlen; ++i) {   // this is the loop "down"
+//          arrC[i] = [];
+//         for (j = 0; j < kk.length; ++j){ // and this is the loop "across"
+//             if (i in kk[j]){
+//           arrC[i].push(kk[j][i]);
+//             }
+//     }
+// }
+//  return arrC         
+}
+function createarray(n){
+    var kk=n.split(' ')
+    // console.log(kk.length)
+    var arr=[]
+    for(var i=0;i<kk.length;i++){
+        var str=[]
+        for(var j=0;j<kk[i].length;j++){
+            str.push(" ")
+        }    
+    arr.push(str)
+    }
+return arr;
+
+}
+
+
+strings("sathish burra")
+
+[ [ 's', 'b' ],
+  [ 'a', 'u' ],
+  [ 't', 'r' ],
+  [ 'h', 'r' ],
+  [ 'i', 'a' ],
+  [ 's', ' ' ],
+  [ 'h', ' ' ] ]
+
+
+
