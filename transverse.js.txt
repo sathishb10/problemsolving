@@ -1,0 +1,21 @@
+[ [ 1, 5, 9 ], [ 2, 6, 10 ], [ 3, 7, 11 ], [ 4, 8, 12 ] ]
+
+function transverse(array){
+  var arr=[]
+  var kk=array.length;
+  // console.log(kk)
+  for(var i=0;i<kk+1;i++){
+     arr[i]=[];
+      for(var j=0;j<array.length;j++){
+          // console.log([j],[i]  +" "+ array[j][i])
+            arr[i].push(array[j][i])
+
+      }
+       
+  }
+ console.log(arr)
+
+}
+transverse([ [1,2,3,4],
+             [5,6,7,8],
+            [9,10,11,12]])
