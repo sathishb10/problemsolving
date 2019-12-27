@@ -5,26 +5,26 @@ function isIsogram(text) {
     // thus, to see if all the chars were unique,
     // check length of text and the size of the set 
     
-    if(text.length===""){
+     if (text.isEmpty) {
       return true;
+    } 
+    else {
+      text = text.toLowerCase();
     }
-    else{
-      text=text.toLowerCase()
-    }
-    
-  var kk=text.split('')
   
-  for(var i=0;i<kk.length;i++){
-    if(kk[i]===kk[i+1]){
+  var array=text.split('')
+   var sortedArr = array.sort();
+  for(var i=0;i<array.length;i++){
+    if(array[i]===array[i+1]){
       return false;
     }
   }
   return true;
   }
   
-  // var output = isIsogram('word');
-  // console.log(output);
-  // var output = isIsogram('KITTen');
-  // console.log(output);
-  // var output = isIsogram('');
-  // console.log(output);
+  var output = isIsogram('word');
+  console.log(output);
+  var output = isIsogram('KITTen');
+  console.log(output);
+  var output = isIsogram('');
+  console.log(output);
